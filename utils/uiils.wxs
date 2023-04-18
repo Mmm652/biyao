@@ -1,0 +1,7 @@
+function selre(arr, val) {
+  return arr.indexOf(val)
+}
+
+module.exports = {
+  selre: selre
+}
