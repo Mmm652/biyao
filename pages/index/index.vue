@@ -1,53 +1,41 @@
 <template>
-	<view class="content">
+	<view class="box">
+		<view class="home-top-section">
+			<view class="search-input-container">
+				<text></text>
+				<text></text>
+			</view>
+			<view class="">
 
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-
+			</view>
 		</view>
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
+<script setup>
+	import {
+		getHome
+	} from "../../api/api.js"
 
-		},
-		methods: {
-
-		}
+	let getData = async () => {
+		let res = await getHome()
+		console.log(res);
 	}
+	getData()
+	// onload() {
+	// 	getData()
+	// }
 </script>
 
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+<style lang="scss">
+	.home-top-section {
+		height: 171rpx;
 	}
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+	.search-input-container {
+		width: 100%;
+		background: #fff;
+		padding-top: 20rpx;
+		padding-bottom: 12rpx;
 	}
 </style>
