@@ -7,6 +7,18 @@ export  function getHome() {
 		url: beseUrl,
 	})
 }
+export  function getClassify(i) {
+	// console.log(i);
+	return axios({
+		url: beseUrl+"/Classify?categoryId="+`${i}`,
+	})
+}
+export  function getClass() {
+	return axios({
+		
+		url:'http://192.168.212.95:5056/classify',
+	})
+}
 
 
 // // 引入request请求方法
